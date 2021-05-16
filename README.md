@@ -13,9 +13,11 @@ widget to work)
 
 1. Ensure that `xset` is available to you on your system.
 2. Clone this repository in your `~/.config/awesome/` folder.
-   `cd ~/.config/awesome/`
-   `git clone git@github.com:iacchus/awesomewm-capslock-widget.git`
-3. Refer to [Usage](#Usage) (below.)
+   ```
+   cd ~/.config/awesome/
+   git clone git@github.com:iacchus/awesomewm-capslock-widget.git
+   ```
+3. Refer to **Usage** (below.) and follow it's three steps.
 4. Restart Awesome (e.g. press `modkey + Control + R` or run `awesome-client
    "awesome.restart()"` from a terminal).
 
@@ -24,12 +26,12 @@ widget to work)
 For **Awesome 4.x**, add the following to your `~/.config/awesome/rc.lua`:
 
 ``` lua
--- If you just cloned the repo in ~/.config/awesome/ require the module:
+-- 1. If you just cloned the repo in ~/.config/awesome/ require the module:
 local capslock = require("awesomewm-capslock-widget")
 
 -- etcetc... more config here...
 
--- Add the widget to the wibox: Look for "-- Right widgets" as shown below and add:
+-- 2. Add the widget to the wibox: Look for "-- Right widgets", as shown below, and add:
     s.mywibox:setup {
 -- more config here
       { -- Right widgets
@@ -38,7 +40,7 @@ local capslock = require("awesomewm-capslock-widget")
         capslock,
 -- more config here
 
--- Add the keybinding to `global_keys` so that the widget can change state
+-- 3. Add the keybinding to `global_keys` so that the widget can change state
 --   on keypress:
 --
 -- {{{ Key bindings
