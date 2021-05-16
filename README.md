@@ -47,7 +47,7 @@ local capslock = require("awesomewm-capslock-widget")
         layout = wibox.layout.fixed.horizontal,
         wibox.widget.systray(),
         capslock,
--- more config here
+        -- more config here
 
 -- THIRD. Add the keybinding to `global_keys` so that the widget can change state
 --          on keypress, by adding the line `capslock.key` there:
@@ -74,7 +74,7 @@ strings. You will probably need to adjust the `forced_width` attribute too.
 For example:
 
 ``` lua
-local capslock = require("capslock")
+local capslock = require("awesomewm-capslock-widget")
 capslock.forced_width = 35
 capslock.activated = "<u>CAPS</u>"
 capslock.deactivated = "<u>caps</u>"
