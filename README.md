@@ -1,13 +1,16 @@
 # A simple CAPS LOCK widget for Awesome
 
 (fork from https://github.com/stefano-m/awesome-capslock_widget)
-(See also the NUM LOCK widget)
+(See also the [AWESOMEWM NUM LOCK widget](https://github.com/iacchus/awesomewm-numlock-widget))
 
 Useful when you have a keyboard that does not have a CAPS LOCK indicator.
 
 This widget is really simple and parses the output of `xset` to figure out
 whether CAPS LOCK is active or not. (Hint: you need the `xset` utility for this
 widget to work)
+
+This script is simple and you can edit the file `init.lua` if you want to change
+it.
 
 # Installation
 
@@ -26,12 +29,12 @@ widget to work)
 For **Awesome 4.x**, add the following to your `~/.config/awesome/rc.lua`:
 
 ``` lua
--- 1. If you just cloned the repo in ~/.config/awesome/ require the module:
+-- FIRST. If you just cloned the repo in ~/.config/awesome/ require the module:
 local capslock = require("awesomewm-capslock-widget")
 
 -- etcetc... more config here...
 
--- 2. Add the widget to the wibox: Look for "-- Right widgets", as shown below, and add:
+-- SECOND. Add the widget to the wibox: Look for "-- Right widgets", as shown below, and add:
     s.mywibox:setup {
 -- more config here
       { -- Right widgets
@@ -40,7 +43,7 @@ local capslock = require("awesomewm-capslock-widget")
         capslock,
 -- more config here
 
--- 3. Add the keybinding to `global_keys` so that the widget can change state
+-- THIRD. Add the keybinding to `global_keys` so that the widget can change state
 --   on keypress:
 --
 -- {{{ Key bindings
