@@ -34,7 +34,8 @@ local capslock = require("awesomewm-capslock-widget")
 
 -- etcetc... more config here...
 
--- SECOND. Add the widget to the wibox: Look for "-- Right widgets", as shown below, and add:
+-- SECOND. Add the widget to the wibox: Look for "-- Right widgets",
+as shown below, and add the line `capslock,` where you want to see the widget:
     s.mywibox:setup {
 -- more config here
       { -- Right widgets
@@ -44,7 +45,7 @@ local capslock = require("awesomewm-capslock-widget")
 -- more config here
 
 -- THIRD. Add the keybinding to `global_keys` so that the widget can change state
---   on keypress:
+--   on keypress, by adding the line `capslock.key` there:
 --
 -- {{{ Key bindings
 local globalkeys = awful.util.table.join(
