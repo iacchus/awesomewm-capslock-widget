@@ -1,5 +1,8 @@
 # A simple CAPS LOCK widget for Awesome
 
+(fork from https://github.com/stefano-m/awesome-capslock_widget)
+(See also the NUM LOCK widget)
+
 Useful when you have a keyboard that does not have a CAPS LOCK indicator.
 
 This widget is really simple and parses the output of `xset` to figure out
@@ -9,9 +12,11 @@ widget to work)
 # Installation
 
 1. Ensure that `xset` is available to you on your system.
-2. Copy `capslock.lua` in your `~/.config/awesome/ folder` (e.g. by cloning this
-   repository).
-3. Restart Awesome (e.g. press `modkey + Control` or run `awesome-client
+2. Clone this repository in your `~/.config/awesome/` folder.
+   `cd ~/.config/awesome/`
+   `git clone git@github.com:iacchus/awesomewm-capslock-widget.git`
+3. Refer to [Usage](#Usage) (below.)
+4. Restart Awesome (e.g. press `modkey + Control + R` or run `awesome-client
    "awesome.restart()"` from a terminal).
 
 # Usage
@@ -19,16 +24,12 @@ widget to work)
 For **Awesome 4.x**, add the following to your `~/.config/awesome/rc.lua`:
 
 ``` lua
--- If you just copied the file in ~/.config/awesome
-local capslock = require("capslock")
+-- If you just cloned the repo in ~/.config/awesome/ require the module:
+local capslock = require("awesomewm-capslock-widget")
 
--- If you cloned the repo as a submodule in
--- ~/.config/awesome/external/capslock
--- local capslock = require("external.capslock.capslock")
+-- etcetc... more config here...
 
--- more config here
-
-    -- Add widgets to the wibox
+-- Add the widget to the wibox: Look for "-- Right widgets" as shown below and add:
     s.mywibox:setup {
 -- more config here
       { -- Right widgets
@@ -36,6 +37,10 @@ local capslock = require("capslock")
         wibox.widget.systray(),
         capslock,
 -- more config here
+
+-- Add the keybinding to `global_keys` so that the widget can change state
+--   on keypress:
+--
 -- {{{ Key bindings
 local globalkeys = awful.util.table.join(
   capslock.key,
@@ -51,9 +56,8 @@ when CAPS LOCK is inactive, a lowecase letter **a** will be displayed:
 ![inactive_capslock screenshot](/screenshots/inactive_capslock_widget.png?raw=true)
 
 These can be changed by changing the `activated` and `deactivated`
-attributes of the widget
-as
-[Pango markup](https://developer.gnome.org/pango/stable/PangoMarkupFormat.html)
+attributes of the widget as
+[Pango markup](https://developer.gnome.org/pygtk/stable/pango-markup-language.html)
 strings. You will probably need to adjust the `forced_width` attribute too.
 
 For example:
