@@ -40,7 +40,9 @@ local capslock = require("awesomewm-capslock-widget")
 --           as shown below, and add the line `capslock,` where you want to
 --           see the widget (pay attention to the ending commas `,`):
     s.mywibox:setup {
--- more config here
+
+      -- more config here...
+
       { -- Right widgets
         layout = wibox.layout.fixed.horizontal,
         wibox.widget.systray(),
