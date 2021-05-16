@@ -1,7 +1,8 @@
 # A simple CAPS LOCK widget for Awesome
 
 (fork from https://github.com/stefano-m/awesome-capslock_widget)
-(See also the [AWESOMEWM NUM LOCK widget](https://github.com/iacchus/awesomewm-numlock-widget))
+
+(**See also** the [AwesomeWM Num Lock widget](https://github.com/iacchus/awesomewm-numlock-widget))
 
 Useful when you have a keyboard that does not have a CAPS LOCK indicator.
 
@@ -29,13 +30,15 @@ it.
 For **Awesome 4.x**, add the following to your `~/.config/awesome/rc.lua`:
 
 ``` lua
--- FIRST. If you just cloned the repo in ~/.config/awesome/ require the module:
+-- FIRST. If you just cloned the repo in ~/.config/awesome/ require the module
+--          at the beginning of the file (anywhere there should be ok.):
 local capslock = require("awesomewm-capslock-widget")
 
 -- etcetc... more config here...
 
 -- SECOND. Add the widget to the wibox: Look for "-- Right widgets",
-as shown below, and add the line `capslock,` where you want to see the widget:
+--           as shown below, and add the line `capslock,` where you want to
+--           see the widget (pay attention to the ending commas `,`):
     s.mywibox:setup {
 -- more config here
       { -- Right widgets
@@ -45,7 +48,7 @@ as shown below, and add the line `capslock,` where you want to see the widget:
 -- more config here
 
 -- THIRD. Add the keybinding to `global_keys` so that the widget can change state
---   on keypress, by adding the line `capslock.key` there:
+--          on keypress, by adding the line `capslock.key` there:
 --
 -- {{{ Key bindings
 local globalkeys = awful.util.table.join(
